@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "python-leetcode"
 version = "0.1.0"
-description = ""
+description = "Solution to leetcode problems in python"
 authors = ["apella1 <johncollons5@gmail.com>"]
 readme = "README.md"
 
