@@ -1,4 +1,5 @@
 """Two sum problem"""
+from pprint import pprint
 
 
 # O(n2) time complexity
@@ -13,7 +14,7 @@ def two_sum(nums, target):
 def two_sum2(nums: list[int], target: int):
     for index, value in enumerate(nums):
         difference = target - value
-        if difference in nums and (nums.index(difference) != index):
+        if difference in nums[index:] and (nums.index(difference) != index):
             return [index, nums.index(difference)]
 
 
@@ -25,3 +26,6 @@ def two_sum_hash_map(nums: list[int], target: int):
         if diff in prev_map:
             return [prev_map[diff], y]
         prev_map[z] = y
+
+
+pprint(two_sum2([1, 2, 3, 4, 5], 8))
