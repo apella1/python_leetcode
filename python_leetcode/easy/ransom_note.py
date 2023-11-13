@@ -16,7 +16,19 @@ def can_construct_ransom_from_magazine(ransom_note: str, magazine: str) -> bool:
     return True
 
 
+# optimized solution using a single dictionary
+def can_construct_optimized(ransom_note: str, magazine: str) -> bool:
+    m_dict = Counter(magazine)
+    for ch in ransom_note:
+        if ch not in m_dict or m_dict[ch] == 0:
+            return False
+        else:
+            m_dict[ch] -= 1
+    return True
+
+
 pprint(can_construct_ransom_from_magazine("fihjjjjei", "hjibagacbhadfaefdjaeaebgi"))
+pprint(can_construct_optimized("fihjjjjei", "hjibagacbhadfaefdjaeaebgi"))
 
 # We can also manually populate a dictionary from a string
 # Counter collections module makes it easier to populate the dicts
