@@ -1,4 +1,4 @@
-"""Two sum problem"""
+""" * Arrays and Hashing """
 from pprint import pprint
 
 
