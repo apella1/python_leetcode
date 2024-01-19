@@ -15,6 +15,7 @@ def contains_duplicate_hashmap(nums: list[int]) -> bool:
     nums_map = {}
     for num in nums:
         if num not in nums_map:
+            # ! checking key in map
             nums_map[num] = 0
         nums_map[num] += 1
         if nums_map[num] > 1:
