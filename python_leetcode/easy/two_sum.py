@@ -19,7 +19,7 @@ def two_sum2(nums: list[int], target: int):
 
 
 # runtime 57ms (92.24%), memory 17.60 (45.01%)
-def two_sum_hash_map(nums: list[int], target: int):
+def two_sum_hash_map(nums: list[int], target: int) -> list[int] | None:
     prev_map = {}
     for y, z in enumerate(nums):
         diff = target - z
@@ -29,3 +29,4 @@ def two_sum_hash_map(nums: list[int], target: int):
 
 
 pprint(two_sum2([1, 2, 3, 4, 5], 8))
+print(two_sum_hash_map([4, 5, 6, 8, 1], 11))
