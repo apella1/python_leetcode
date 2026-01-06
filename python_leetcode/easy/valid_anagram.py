@@ -1,6 +1,5 @@
 """NeetCode 150"""
 
-
 from collections import Counter
 
 
@@ -18,6 +17,7 @@ def valid_anagram_counter(s: str, t: str) -> bool:
     return False
 
 
+print("Valid Anagram Counter")
 print(valid_anagram_counter("bat", "tab"))
 print(valid_anagram_counter("hello", "kings"))
 
@@ -37,15 +37,17 @@ print(make_map_from_string("ich koche manchmal"))
 
 # using manual maps
 def valid_anagram(s: str, t: str) -> bool:
-    counter_s, counter_t = {}, {}
     if len(t) != len(s):
         return False
+
+    counter_s, counter_t = {}, {}
+
     for i in range(len(s)):
         # * using get() to assign a default value for missing keys
         counter_s[s[i]] = 1 + counter_s.get(s[i], 0)
         counter_t[t[i]] = 1 + counter_t.get(t[i], 0)
     for ct in counter_s:
-        if counter_s[ct] != counter_t.get([ct], 0):
+        if counter_s[ct] != counter_t.get(ct, 0):
             return False
     return True
 
@@ -55,4 +57,8 @@ def valid_anagram_sorted(s: str, t: str) -> bool:
     return sorted(s) == sorted(t)
 
 
+print("Valid Anagram Sorted")
 print(valid_anagram_sorted("cat", "tac"))
+
+print("Valid Anagram Hashmap")
+print(valid_anagram("cat", "tac"))

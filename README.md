@@ -5,7 +5,8 @@
 ### Easy
 
 - [ ] 
-    1. Contains Duplicate - Hash Set, Hash Map, Conversion of Array to Set, Sorting
+    1. Contains Duplicate - HashSet, HashMap, Conversion of Array to Set, Sorting
+    2. Valid Anagram - Hash
 
 ### Medium
 
