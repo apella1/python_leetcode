@@ -11,6 +11,9 @@ def contains_duplicate(nums: list[int]) -> bool:
     return False
 
 
+# bottleneck on storing the entire dictionary KV pairs and increments before checking for duplicates
+# the contains_duplicate_hashmap_no_check() is more efficient than this
+# the use of a hash set is more efficient as it only stores the keys
 def contains_duplicate_hashmap(nums: list[int]) -> bool:
     nums_map = {}
     for num in nums:
@@ -23,6 +26,15 @@ def contains_duplicate_hashmap(nums: list[int]) -> bool:
     return False
 
 
+def contains_duplicate_hashmap_no_check(nums: list[int]) -> bool:
+    nums_map = {}
+    for num in nums:
+        if num in nums_map.keys():
+            return True
+        nums_map[num] = 1
+    return False
+
+
 # time -> O(n)
 # space -> O(n)
 def contains_duplicate_hashset(nums: list[int]) -> bool:
@@ -32,3 +44,8 @@ def contains_duplicate_hashset(nums: list[int]) -> bool:
             return True
         hash_set.add(n)
     return False
+
+
+# exhaustive operation - can trigger out of memory errors for large data sets
+def contains_duplicate_pro(nums: list[int]) -> bool:
+    return len(set(nums)) != len(nums)
