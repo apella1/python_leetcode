@@ -15,6 +15,8 @@ def two_sum2(nums: list[int], target: int):
     for index, value in enumerate(nums):
         difference = target - value
         if difference in nums[index:] and (nums.index(difference) != index):
+            # * to return the max or min (call max/min based on the requested order) i.e. for min first
+            # * return [min(index, nums.index(difference)), max(index, nums.index(difference))]
             return [index, nums.index(difference)]
 
 
